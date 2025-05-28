@@ -12,7 +12,7 @@ const Favourites = () => {
         <Col className="my-3">
           <div className="d-flex justify-content-between align-items-center mt-3 mb-5">
             <h1 className="display-4">Aziende Preferite</h1>
-            <Link to="/MainSearch">
+            <Link to="/">
               <Button variant="primary">Torna alla Homepage</Button>
             </Link>
           </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import Job from "./Job";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const CompanySearchResults = () => {
   const [jobs, setJobs] = useState([]);
@@ -32,8 +32,13 @@ const CompanySearchResults = () => {
     <Container>
       <Row>
         <Col className="my-3">
-          <h1 className="display-4">Job posting for: {params.company}</h1>
-          {jobs.map(jobData => (
+          <div className="d-flex justify-content-between align-items-center mt-3 mb-5">
+            <h1 className="display-4">Job posting for: {params.company}</h1>
+            <Link to="/">
+              <Button variant="dark">Torna alla Homepage</Button>
+            </Link>
+          </div>
+          {jobs.map((jobData) => (
             <Job key={jobData._id} data={jobData} />
           ))}
         </Col>
